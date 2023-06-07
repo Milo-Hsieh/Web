@@ -1,0 +1,303 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #232323;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* navigation bar */
+.navbar {
+  background-color: #1d8493;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #ffcc00;
+}
+
+/* sign in and log out button */
+.navbar .signIn,
+.navbar .logOut {
+  position: absolute;
+  padding: 8px 20px;
+  background-color: rgb(197, 178, 163);
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  right: 20%;
+  top: 1.8%;
+}
+
+.navbar .logOut {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .signIn,
+  .navbar .logOut {
+    right: 5%;
+    top: 1%;
+  }
+  .navbar .helloSpan {
+    right: 10%;
+    top: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .signIn,
+  .navbar .logOut {
+    right: 1.5%;
+    top: 0.5%;
+  }
+  .navbar .helloSpan {
+    right: 5%;
+    top: 3%;
+  }
+}
+
+.navbar .signIn:hover,
+.navbar .logOut:hover {
+  background-color: rgb(219, 208, 200); /* Darker background color on hover */
+}
+
+.navbar .helloSpan {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  right: 5%;
+  top: 1.8%;
+}
+
+/* main */
+.main {
+  background-color: #232323;
+}
+
+.container {
+  display: flex;
+  height: 87vh;
+}
+
+.main-img img {
+  width: 50vw;
+  height: 86.5vh;
+  object-fit: cover;
+}
+
+.main-content {
+  padding: 10%;
+  position: relative;
+}
+
+.line {
+  width: 1000px;
+  height: 1px;
+  background-color: #ffffff;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.main-content h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.text {
+  width: 650px;
+  color: white;
+  padding: 5px;
+  font-size: 22px;
+
+  margin: 20px 0;
+}
+
+/* scorll up button */
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  background-image: url("./pictures/iconmonstr-caret-up-circle-filled.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+#scrollBtn:hover {
+  transform: scale(1.3);
+}
+
+#scrollBtn:hover::before {
+  content: "Scroll to Top";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 10px;
+  padding: 5px 10px;
+  background-color: #3a2c21;
+  border-radius: 8px;
+}
+
+/* model */
+/* Sign-in Button container */
+.model {
+  display: none;
+  position: fixed;
+  top: 6.55%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.model h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: bold;
+  font-size: 200%;
+}
+
+.model form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  background-color: #b2b4c4; /* Light gray background color for the form */
+  border-radius: 10px;
+  width: 50%;
+}
+
+.model label {
+  font-size: 20px; /* Increase the font size of the labels */
+  font-weight: bold;
+}
+
+.model input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 30px; /* Adjust the height of the input fields */
+}
+
+.model .required {
+  color: red;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.model button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 120px; /* Set the width of the buttons to be the same */
+}
+
+.model button#submitButton {
+  background-color: #4caf50; /* Green background color for Submit button */
+  color: white;
+}
+
+.model button#submitButton:hover {
+  background-color: #317735; /* Darker green background color on hover */
+}
+
+.model button#clearButton {
+  background-color: #f44336; /* Red background color for Clear button */
+  color: white;
+}
+
+.model button#clearButton:hover {
+  background-color: #b12727; /* Darker red background color on hover */
+}
+
+/* close button */
+.close {
+  background-color: rgba(27, 22, 22, 0.9);
+  padding: 1px 6px;
+  position: absolute;
+  top: 20px;
+  right: 28%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #14b6c1e0;
+}
+
+/* footer */
+
+.footer-container {
+  background-color: #342a2a;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4.5px;
+}
+
+.social-icons img {
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.8);
+}
+
+.copyright {
+  padding-left: 10px;
+  color: rgb(235, 224, 224);
+  font-size: 130%;
+}
